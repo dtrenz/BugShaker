@@ -8,17 +8,10 @@
 
 import UIKit
 
+/// Simply import ShakeReport into any View Controller to which you
+/// would like to add bug reporting via shake.
+import BugShaker
+
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
-

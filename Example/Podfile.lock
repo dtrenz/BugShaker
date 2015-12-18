@@ -1,0 +1,20 @@
+PODS:
+  - BugShaker (0.1.0)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
+
+DEPENDENCIES:
+  - BugShaker (from `../`)
+  - Nimble (= 3.0.0)
+  - Quick (~> 0.8.0)
+
+EXTERNAL SOURCES:
+  BugShaker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BugShaker: a3d0b8de3f256d329404199c4c004f2e8c5f7fa5
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+
+COCOAPODS: 0.39.0
