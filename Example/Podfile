@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'BugShaker_Example', :exclusive => true do
+  pod "BugShaker", :path => "../"
+end
+
+target 'BugShaker_Tests', :exclusive => true do
+  pod "BugShaker", :path => "../"
+
+  pod 'Quick', '~> 0.8.0'
+  pod 'Nimble', '3.0.0'
+end
