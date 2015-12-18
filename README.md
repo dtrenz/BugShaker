@@ -9,6 +9,11 @@ BugShaker allows your users to simply submit bug reports by shaking the device.
 When a shake is detected, the current screen state is captured and the user is
 prompted to submit a bug report via a mail composer with the screenshot attached.
 
+## Screenshots
+
+![Report Prompt](https://github.com/detroit-labs/BugShaker/blob/master/screenshot-1.png)
+![Report Compose View](https://github.com/detroit-labs/BugShaker/blob/master/screenshot-2.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
