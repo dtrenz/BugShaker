@@ -18,9 +18,34 @@ prompted to submit a bug report via a mail composer with the screenshot attached
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+All you have to do to enable bug reporting is import `BugShaker` in your `AppDelegate`
+and call the `configure()` method in `application:didFinishLaunchingWithOptions`,
+passing in the array of email recipients and an optional custom subject line:
+
+```swift
+  import BugShaker
+
+  @UIApplicationMain
+  class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+      /**
+      *  Configure ShakeReport with an array of email recipients (required)
+      *  and an optional custom subject line to use for all bug reports.
+      */
+      BugShaker.configure(to: ["example@email.com"], subject: "Bug Report")
+
+      return true
+    }
+
+  }
+```
+
 **NOTE:** There is a known issue with using a mail compose view controller in a simulator
 which causes some simulators simulator to crash. You will need to run the example on a
-device to test out the full report mail functionality.
+device to test out the full report compose view functionality.
 
 ## Installation
 
