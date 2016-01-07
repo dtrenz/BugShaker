@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     /**
-    *  Configure ShakeReport with an array of email recipients (required)
+    *  Configure BugShaker with an array of email recipients (required)
     *  and an optional custom subject line to use for all bug reports.
     */
     BugShaker.configure(to: ["example@email.com"], subject: "Bug Report")
