@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Simply import ShakeReport into any View Controller to which you
+/// Simply import BugShaker into any View Controller to which you
 /// would like to add bug reporting via shake.
 import BugShaker
 
