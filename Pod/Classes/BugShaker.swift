@@ -102,7 +102,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
       let mailComposer = MFMailComposeViewController()
       
       guard let toRecipients = BugShaker.Config.toRecipients else {
-        print("ShakeReport – Error: No recipients provided. Make sure that BugShaker.configure() is called.")
+        print("BugShaker – Error: No recipients provided. Make sure that BugShaker.configure() is called.")
         return
       }
       
