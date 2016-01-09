@@ -44,7 +44,7 @@ passing in the array of email recipients and an optional custom subject line:
 ```
 
 **NOTE:** There is a known issue with using a mail compose view controller in a simulator
-which causes some simulators simulator to crash. You will need to run the example on a
+which causes some simulators to crash. You will need to run the example on a
 device to test out the full report compose view functionality.
 
 ## Installation
