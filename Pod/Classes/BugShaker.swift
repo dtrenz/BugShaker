@@ -26,7 +26,7 @@ public class BugShaker {
   - parameter subject:      Custom subject line to use for the report email.
   - parameter body:         Custom email body (plain text).
   */
-    public class func configure(to toRecipients: [String]!, subject: String?, body: String?) {
+  public class func configure(to toRecipients: [String]!, subject: String?, body: String?) {
     Config.toRecipients = toRecipients
     Config.subject = subject
     Config.body = body
