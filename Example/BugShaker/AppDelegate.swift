@@ -21,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     *  and an optional custom subject line to use for all bug reports.
     */
 
-    let iOSVersion = UIDevice.currentDevice().systemVersion
-    BugShaker.configure(to: ["example@email.com"], subject: "Bug Report", body: "Hi Developers, \n I am running your app on \(iOSVersion ?? "unknown") and wanted to thank you.\n I am also reporting a bug where ... ")
+    BugShaker.configure(to: ["example@email.com"], subject: "Bug Report", body: "Hi Developers, I am reporting a bug where ... ")
     
     return true
   }
