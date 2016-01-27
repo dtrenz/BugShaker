@@ -14,19 +14,22 @@ public class BugShaker {
   struct Config {
     static var toRecipients: [String]?
     static var subject: String?
+    static var body: String?
   }
   
   // MARK: - Configuration
   
   /**
-  Set bug report email recipient(s) and custom subject line.
+  Set bug report email recipient(s), custom subject line and body.
   
   - parameter toRecipients: List of email addresses to which the report will be sent.
   - parameter subject:      Custom subject line to use for the report email.
+  - parameter body:         Custom email body (plain text).
   */
-  public class func configure(to toRecipients: [String]!, subject: String?) {
+  public class func configure(to toRecipients: [String]!, subject: String?, body: String?) {
     Config.toRecipients = toRecipients
     Config.subject = subject
+    Config.body = body
   }
   
 }
@@ -92,7 +95,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
   }
   
   /**
-   Present the user with a mail compose view with the recipient(s) & subject line
+   Present the user with a mail compose view with the recipient(s), subject line and body
    pre-populated, and the screenshot attached.
    
    - parameter screenshot: The screenshot to attach to the report.
@@ -108,6 +111,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
       
       mailComposer.setToRecipients(toRecipients)
       mailComposer.setSubject(BugShaker.Config.subject ?? "Bug Report")
+      mailComposer.setMessageBody(BugShaker.Config.body ?? "", isHTML: false)
       mailComposer.mailComposeDelegate = self
       
       if let screenshot = screenshot, let screenshotJPEG = UIImageJPEGRepresentation(screenshot, CGFloat(1.0)) {
