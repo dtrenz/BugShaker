@@ -22,6 +22,9 @@ All you have to do to enable bug reporting is import `BugShaker` in your `AppDel
 and call the `configure()` method in `application:didFinishLaunchingWithOptions`,
 passing in the array of email recipients and an optional custom subject line:
 
+
+### Basic usage
+
 ```swift
   import BugShaker
 
@@ -42,6 +45,38 @@ passing in the array of email recipients and an optional custom subject line:
 
   }
 ```
+
+### Advanced usage
+
+```swift
+  import BugShaker
+
+  @UIApplicationMain
+  class AppDelegate: UIResponder, UIApplicationDelegate, BugShakerDelegate {
+
+    var window: UIWindow?
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+      /**
+      *  Configure ShakeReport with an array of email recipients (required)
+      *  and an optional custom subject line to use for all bug reports.
+      */
+      BugShaker.configure(to: ["example@email.com"], subject: "Bug Report", body: "Hi there, I am reporting a bug in which ...", delegate: self)
+
+      return true
+    }
+
+    func shouldPresentReportPrompt() -> Bool {
+        // here you can read some settings from user defaults and decide if you want to have the bug report alert to show up or not
+        if NSUserDefaults.standardUserDefaults().stringForKey("CONFIG_ENABLE_BUGSHAKE") != "\(true)" {
+            return false
+        }
+        return true
+    }
+
+  }
+```
+
 
 **NOTE:** There is a known issue with using a mail compose view controller in a simulator
 which causes some simulators simulator to crash. You will need to run the example on a
