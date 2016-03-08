@@ -1,6 +1,6 @@
 # BugShaker
 
-[![CI Status](http://img.shields.io/travis/detroit-labs/BugShaker.svg?style=flat)](https://travis-ci.org/detroit-labs/BugShaker)
+[![CI Status](http://img.shields.io/travis/dtrenz/BugShaker.svg?style=flat)](https://travis-ci.org/dtrenz/BugShaker)
 [![Version](https://img.shields.io/cocoapods/v/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
 [![License](https://img.shields.io/cocoapods/l/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
 [![Platform](https://img.shields.io/cocoapods/p/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
@@ -9,10 +9,12 @@ BugShaker allows your users to simply submit bug reports by shaking the device.
 When a shake is detected, the current screen state is captured and the user is
 prompted to submit a bug report via a mail composer with the screenshot attached.
 
+**Android developers:** If you are looking for an Android library with similar functionality, check out [stkent/bugshaker-android](https://github.com/stkent/bugshaker-android).
+
 ## Screenshots
 
-![Report Prompt](https://github.com/detroit-labs/BugShaker/blob/master/screenshot-1.png)
-![Report Compose View](https://github.com/detroit-labs/BugShaker/blob/master/screenshot-2.png)
+![Report Prompt](https://github.com/dtrenz/BugShaker/blob/master/screenshot-1.png)
+![Report Compose View](https://github.com/dtrenz/BugShaker/blob/master/screenshot-2.png)
 
 ## Usage
 
@@ -79,7 +81,7 @@ passing in the array of email recipients and an optional custom subject line:
 
 
 **NOTE:** There is a known issue with using a mail compose view controller in a simulator
-which causes some simulators simulator to crash. You will need to run the example on a
+which causes some simulators to crash. You will need to run the example on a
 device to test out the full report compose view functionality.
 
 ## Installation
