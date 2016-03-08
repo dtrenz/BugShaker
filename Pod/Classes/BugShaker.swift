@@ -31,7 +31,7 @@ public class BugShaker {
   - parameter body:         Custom email body (plain text).
   - parameter delegate:     optional delegate object that implements ShouldPresentReportPorompt and can basically disable or enable the bugshaker behavior
   */
-    public class func configure(to toRecipients: [String]!, subject: String?, body: String?, delegate: BugShakerDelegate? = nil) {
+  public class func configure(to toRecipients: [String]!, subject: String?, body: String?, delegate: BugShakerDelegate? = nil) {
     Config.toRecipients = toRecipients
     Config.subject = subject
     Config.body = body
