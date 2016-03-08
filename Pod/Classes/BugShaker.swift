@@ -8,12 +8,16 @@
 import UIKit
 import MessageUI
 
+public protocol BugShakerDelegate {
+  func ShouldPresentReportPrompt() -> Bool
+}
 
 public class BugShaker {
-  
+
   struct Config {
     static var toRecipients: [String]?
     static var subject: String?
+    static var delegate: BugShakerDelegate?
     static var body: String?
   }
   
@@ -25,11 +29,13 @@ public class BugShaker {
   - parameter toRecipients: List of email addresses to which the report will be sent.
   - parameter subject:      Custom subject line to use for the report email.
   - parameter body:         Custom email body (plain text).
+  - parameter delegate:     optional delegate object that implements ShouldPresentReportPorompt and can basically disable or enable the bugshaker behavior
   */
-  public class func configure(to toRecipients: [String]!, subject: String?, body: String?) {
+  public class func configure(to toRecipients: [String]!, subject: String?, body: String?, delegate: BugShakerDelegate? = nil) {
     Config.toRecipients = toRecipients
     Config.subject = subject
     Config.body = body
+    Config.delegate = delegate
   }
   
 }
@@ -45,7 +51,13 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
   override public func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
     if motion == .MotionShake {
       let cachedScreenshot = captureScreenshot()
-      
+
+      if let delegate = BugShaker.Config.delegate {
+        if (!delegate.ShouldPresentReportPrompt()) {
+          return
+        }
+      }
+
       presentReportPrompt({ (action) -> Void in
         self.presentReportComposeView(cachedScreenshot)
       })
