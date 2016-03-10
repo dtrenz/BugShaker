@@ -151,7 +151,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
 
     // MARK: - MFMailComposeViewControllerDelegate
 
-    override public func mailComposeController(controller: MFMailComposeViewController,
+    public func mailComposeController(controller: MFMailComposeViewController,
                                                didFinishWithResult result: MFMailComposeResult,
                                                                    error: NSError?) {
         if let error = error {
