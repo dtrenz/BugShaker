@@ -1,6 +1,0 @@
-framework module BugShaker {
-  umbrella header "BugShaker-umbrella.h"
-
-  export *
-  module * { export * }
-}
