@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
                        prompted to submit a bug report via a mail composer with the screenshot attached.
                        DESC
   s.homepage         = "https://github.com/detroit-labs/BugShaker"
-  # s.screenshots      = [
-  #                        "https://raw.githubusercontent.com/dtrenz/SettingsKit/master/Screenshots/screenshot-1.png",
-  #                        "https://raw.githubusercontent.com/dtrenz/SettingsKit/master/Screenshots/screenshot-2.png",
-  #                      ]
+  s.screenshots      = [
+                         "https://raw.githubusercontent.com/dtrenz/BugShaker/develop/Screenshots/screenshot-1.png",
+                         "https://raw.githubusercontent.com/dtrenz/BugShaker/develop/Screenshots/screenshot-2.png",
+                       ]
   s.license          = "MIT"
   s.author           = { "Dan Trenz" => "dtrenz@gmail.com" }
   s.source           = { :git => "https://github.com/detroit-labs/BugShaker.git", :tag => s.version.to_s }
