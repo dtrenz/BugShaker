@@ -51,7 +51,7 @@ class ViewControllerSpec: QuickSpec {
           it("presents the bug report prompt") {
             class MockViewController: UIViewController {
               var presentReportPromptWasCalled = false
-              
+                
               override func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
                 presentReportPromptWasCalled = true
               }
@@ -72,9 +72,9 @@ class ViewControllerSpec: QuickSpec {
             BugShaker.enabled = false
           }
           
-          fit("does not take a screenshot") {
+          it("does not take a screenshot") {
             viewController.motionEnded(.MotionShake, withEvent: nil)
-             
+            
             expect(viewController.captureScreenshotWasCalled) == false
           }
           
