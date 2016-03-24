@@ -17,8 +17,8 @@ prompted to submit a bug report via a mail composer with the screenshot attached
 
 ## Screenshots
 
-![Report Prompt](screenshots/screenshot-1.png)
-![Report Compose View](screenshots/screenshot-2.png)
+![Report Prompt](Screenshots/screenshot-1.png)
+![Report Compose View](Screenshots/screenshot-2.png)
 
 ## Usage
 
