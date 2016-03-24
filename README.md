@@ -49,6 +49,14 @@ passing in the array of email recipients and an optional custom subject line:
 which causes some simulators to crash. You will need to run the example on a
 device to test out the full report compose view functionality.
 
+### Disabling
+
+If you need to disable BugShaker's shake detection for any reason:
+
+```swift
+BugShaker.enabled = false
+```
+
 ## Installation
 
 BugShaker is available through [CocoaPods](http://cocoapods.org). To install
