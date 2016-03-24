@@ -11,6 +11,7 @@
 		C52821231CA43E70003EA0D4 /* BugShaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C52820F81CA43D40003EA0D4 /* BugShaker.framework */; };
 		C528213E1CA43F7B003EA0D4 /* ReportPromptSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821371CA43F60003EA0D4 /* ReportPromptSpec.swift */; };
 		C528213F1CA43F7B003EA0D4 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821381CA43F60003EA0D4 /* ViewControllerSpec.swift */; };
+		C584AE541CA48B1B00CC65F2 /* BugShakerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C584AE531CA48B1B00CC65F2 /* BugShakerSpec.swift */; };
 		E75140A53A95ED141B4078EA /* Pods_BugShakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B45F1CDCC034FA4902615D /* Pods_BugShakerTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		C52821361CA43F60003EA0D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C52821371CA43F60003EA0D4 /* ReportPromptSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPromptSpec.swift; sourceTree = "<group>"; };
 		C52821381CA43F60003EA0D4 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
+		C584AE531CA48B1B00CC65F2 /* BugShakerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugShakerSpec.swift; sourceTree = "<group>"; };
 		E16F4CB9EF5409E5E86AF02F /* Pods-BugShakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugShakerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BugShakerTests/Pods-BugShakerTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE9F6CA326F308370BB72F76 /* Pods-BugShakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugShakerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BugShakerTests/Pods-BugShakerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				C528213D1CA43F69003EA0D4 /* Supporting Files */,
 				C52821371CA43F60003EA0D4 /* ReportPromptSpec.swift */,
 				C52821381CA43F60003EA0D4 /* ViewControllerSpec.swift */,
+				C584AE531CA48B1B00CC65F2 /* BugShakerSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				C528213E1CA43F7B003EA0D4 /* ReportPromptSpec.swift in Sources */,
 				C528213F1CA43F7B003EA0D4 /* ViewControllerSpec.swift in Sources */,
+				C584AE541CA48B1B00CC65F2 /* BugShakerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

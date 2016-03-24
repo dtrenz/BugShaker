@@ -10,9 +10,12 @@ import MessageUI
 
 
 public class BugShaker {
+  
+  /// Enable or disable shake detection
+  public static var enabled = true
 
   struct Config {
-    static var toRecipients: [String]?
+    static var recipients: [String]?
     static var subject: String?
     static var body: String?
   }
@@ -22,14 +25,28 @@ public class BugShaker {
   /**
   Set bug report email recipient(s), custom subject line and body.
 
-  - parameter toRecipients: List of email addresses to which the report will be sent.
-  - parameter subject:      Custom subject line to use for the report email.
-  - parameter body:         Custom email body (plain text).
+  - Parameters:
+    - recipients: List of email addresses to which the report will be sent.
+    - subject:      Custom subject line to use for the report email.
+    - body:         Custom email body (plain text).
   */
-  public class func configure(to toRecipients: [String]!, subject: String?, body: String?) {
-    Config.toRecipients = toRecipients
+  public class func configure(to recipients: [String]!, subject: String?, body: String?) {
+    Config.recipients = recipients
     Config.subject = subject
     Config.body = body
+  }
+  
+  /**
+   Set bug report email recipient(s) & custom subject line.
+   Convenience method for `configure(to:, subject:, body:)` for use when not
+   specifying custom body text.
+   
+   - Parameters:
+     - recipients: List of email addresses to which the report will be sent.
+     - subject:      Custom subject line to use for the report email.
+   */
+  public class func configure(to recipients: [String]!, subject: String?) {
+      configure(to: recipients, subject: subject, body: nil)
   }
 
 }
@@ -43,7 +60,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
   }
 
   override public func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-    if motion == .MotionShake {
+    if motion == .MotionShake && BugShaker.enabled {
       let cachedScreenshot = captureScreenshot()
 
       presentReportPrompt({ (action) -> Void in
@@ -108,7 +125,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     if MFMailComposeViewController.canSendMail() {
       let mailComposer = MFMailComposeViewController()
 
-      guard let toRecipients = BugShaker.Config.toRecipients else {
+      guard let toRecipients = BugShaker.Config.recipients else {
         print("BugShaker – Error: No recipients provided. Make sure that BugShaker.configure() is called.")
         return
       }

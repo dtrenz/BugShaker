@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     *  Configure BugShaker with an array of email recipients (required)
     *  and an optional custom subject line to use for all bug reports.
     */
-
-    BugShaker.configure(to: ["example@email.com"], subject: "Bug Report", body: "Hi Developers, I am reporting a bug where ... ")
+    BugShaker.configure(to: [ "example@email.com" ], subject: "Bug Report", body: "Hi Developers, I am reporting a bug where...")
     
     return true
   }

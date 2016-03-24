@@ -36,28 +36,64 @@ class ViewControllerSpec: QuickSpec {
       
       context("when I shake the device") {
         
-        beforeEach {
-          viewController.motionEnded(.MotionShake, withEvent: nil)
-        }
-        
-        it("takes a screenshot") {
-          expect(viewController.captureScreenshotWasCalled) == true
-        }
-        
-        it("presents the bug report prompt") {
-          class MockViewController: UIViewController {
-            var presentReportPromptWasCalled = false
-            
-            override func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
-              presentReportPromptWasCalled = true
-            }
+        context("when BugShaker is enabled") {
+          
+          beforeEach {
+            BugShaker.enabled = true
           }
           
-          let viewController = MockViewController()
+          it("takes a screenshot") {
+            viewController.motionEnded(.MotionShake, withEvent: nil)
+            
+            expect(viewController.captureScreenshotWasCalled) == true
+          }
           
-          viewController.motionEnded(.MotionShake, withEvent: nil)
+          it("presents the bug report prompt") {
+            class MockViewController: UIViewController {
+              var presentReportPromptWasCalled = false
+                
+              override func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
+                presentReportPromptWasCalled = true
+              }
+            }
+            
+            let viewController = MockViewController()
+            
+            viewController.motionEnded(.MotionShake, withEvent: nil)
+            
+            expect(viewController.presentReportPromptWasCalled) == true
+          }
           
-          expect(viewController.presentReportPromptWasCalled) == true
+        }
+        
+        context("when BugShaker is disabled") {
+          
+          beforeEach {
+            BugShaker.enabled = false
+          }
+          
+          it("does not take a screenshot") {
+            viewController.motionEnded(.MotionShake, withEvent: nil)
+            
+            expect(viewController.captureScreenshotWasCalled) == false
+          }
+          
+          it("does not present the bug report prompt") {
+            class MockViewController: UIViewController {
+              var presentReportPromptWasCalled = false
+              
+              override func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
+                presentReportPromptWasCalled = true
+              }
+            }
+            
+            let viewController = MockViewController()
+            
+            viewController.motionEnded(.MotionShake, withEvent: nil)
+            
+            expect(viewController.presentReportPromptWasCalled) == false
+          }
+          
         }
         
       }
