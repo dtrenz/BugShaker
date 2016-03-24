@@ -1,9 +1,13 @@
-# BugShaker
+<img src="banner.png" width="50%" alt="BugShaker">
+
+Shake to send a bug report!
 
 [![CI Status](http://img.shields.io/travis/dtrenz/BugShaker.svg?style=flat)](https://travis-ci.org/dtrenz/BugShaker)
 [![Version](https://img.shields.io/cocoapods/v/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
 [![License](https://img.shields.io/cocoapods/l/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
 [![Platform](https://img.shields.io/cocoapods/p/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
+[![codecov.io](https://codecov.io/github/dtrenz/BugShaker/coverage.svg?branch=master)](https://codecov.io/github/dtrenz/BugShaker?branch=master)
+[![Sponsored by Detroit Labs](https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat)](http://www.detroitlabs.com)
 
 BugShaker allows your users to simply submit bug reports by shaking the device.
 When a shake is detected, the current screen state is captured and the user is
@@ -13,8 +17,8 @@ prompted to submit a bug report via a mail composer with the screenshot attached
 
 ## Screenshots
 
-![Report Prompt](https://github.com/dtrenz/BugShaker/blob/master/screenshot-1.png)
-![Report Compose View](https://github.com/dtrenz/BugShaker/blob/master/screenshot-2.png)
+![Report Prompt](screenshots/screenshot-1.png)
+![Report Compose View](screenshots/screenshot-2.png)
 
 ## Usage
 
