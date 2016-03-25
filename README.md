@@ -76,4 +76,4 @@ Dan Trenz ([@dtrenz](http://www.twitter.com/dtrenz)) c/o [Detroit Labs](http://w
 
 ## License
 
-BugShaker is available under the MIT license. See the LICENSE file for more info.
+BugShaker is available under the Apache License, Version 2.0. See the LICENSE file for more info.
