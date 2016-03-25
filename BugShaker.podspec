@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                          "https://raw.githubusercontent.com/dtrenz/BugShaker/develop/Screenshots/screenshot-1.png",
                          "https://raw.githubusercontent.com/dtrenz/BugShaker/develop/Screenshots/screenshot-2.png",
                        ]
-  s.license          = "MIT"
+  s.license          = "Apache 2.0"
   s.author           = { "Dan Trenz" => "dtrenz@gmail.com" }
   s.source           = { :git => "https://github.com/detroit-labs/BugShaker.git", :tag => s.version.to_s }
   s.social_media_url = "https://twitter.com/dtrenz"

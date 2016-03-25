@@ -1,4 +1,4 @@
-<img src="banner.png" width="50%" alt="BugShaker">
+<img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/banner.png" width="50%" alt="BugShaker">
 
 Shake to send a bug report!
 
@@ -17,8 +17,8 @@ prompted to submit a bug report via a mail composer with the screenshot attached
 
 ## Screenshots
 
-![Report Prompt](Screenshots/screenshot-1.png)
-![Report Compose View](Screenshots/screenshot-2.png)
+![Report Prompt](https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png)
+![Report Compose View](https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png)
 
 ## Usage
 
@@ -76,4 +76,4 @@ Dan Trenz ([@dtrenz](http://www.twitter.com/dtrenz)) c/o [Detroit Labs](http://w
 
 ## License
 
-BugShaker is available under the MIT license. See the LICENSE file for more info.
+BugShaker is available under the Apache License, Version 2.0. See the LICENSE file for more info.
