@@ -17,8 +17,8 @@ prompted to submit a bug report via a mail composer with the screenshot attached
 
 ## Screenshots
 
-![Report Prompt](https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png)
-![Report Compose View](https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png)
+<a href="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png"><img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png" width="50%" alt="Report Prompt"></a>
+<a href="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png"><img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png" width="50%" alt="Report Compose View"></a>
 
 ## Usage
 
