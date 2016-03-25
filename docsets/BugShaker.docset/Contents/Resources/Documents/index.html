@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BugShaker  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="BugShaker  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">BugShaker Docs</a> (42% documented)</p>
+        <p class="header-right"><a href="https://github.com/dtrenz/BugShaker"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">BugShaker Reference</a>
+        <img id="carat" src="img/carat.png" />
+        BugShaker  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/BugShaker.html">BugShaker</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p><img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/banner.png" width="50%" alt="BugShaker"></p>
+
+<p>Shake to send a bug report!</p>
+
+<p><a href="https://travis-ci.org/dtrenz/BugShaker"><img src="http://img.shields.io/travis/dtrenz/BugShaker.svg?style=flat" alt="CI Status"></a>
+<a href="http://cocoapods.org/pods/BugShaker"><img src="https://img.shields.io/cocoapods/v/BugShaker.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/BugShaker"><img src="https://img.shields.io/cocoapods/l/BugShaker.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/BugShaker"><img src="https://img.shields.io/cocoapods/p/BugShaker.svg?style=flat" alt="Platform"></a>
+<a href="https://codecov.io/github/dtrenz/BugShaker?branch=master"><img src="https://codecov.io/github/dtrenz/BugShaker/coverage.svg?branch=master" alt="codecov.io"></a>
+<a href="http://www.detroitlabs.com"><img src="https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat" alt="Sponsored by Detroit Labs"></a></p>
+
+<p>BugShaker allows your users to simply submit bug reports by shaking the device.
+When a shake is detected, the current screen state is captured and the user is
+prompted to submit a bug report via a mail composer with the screenshot attached.</p>
+
+<p><strong>Android developers:</strong> If you are looking for an Android library with similar functionality, check out <a href="https://github.com/stkent/bugshaker-android">stkent/bugshaker-android</a>.</p>
+<a href='#screenshots' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='screenshots'>Screenshots</h2>
+
+<p><img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png" alt="Report Prompt">
+<img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png" alt="Report Compose View"></p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+
+<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
+
+<p>All you have to do to enable bug reporting is import <code>BugShaker</code> in your <code>AppDelegate</code>
+and call the <code>configure()</code> method in <code>application:didFinishLaunchingWithOptions</code>,
+passing in the array of email recipients and an optional custom subject line:</p>
+<pre class="highlight swift"><code>  <span class="kd">import</span> <span class="kt">BugShaker</span>
+
+  <span class="kd">@UIApplicationMain</span>
+  <span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSObject</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+      <span class="o">/**</span>
+      <span class="o">*</span>  <span class="kt">Configure</span> <span class="kt">ShakeReport</span> <span class="n">with</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="n">email</span> <span class="nf">recipients</span> <span class="p">(</span><span class="kd">required</span><span class="p">)</span>
+      <span class="o">*</span>  <span class="n">and</span> <span class="n">an</span> <span class="kd">optional</span> <span class="n">custom</span> <span class="n">subject</span> <span class="n">line</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">all</span> <span class="n">bug</span> <span class="n">reports</span><span class="o">.</span>
+      <span class="o">*/</span>
+      <span class="kt">BugShaker</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="p">[</span><span class="s">"example@email.com"</span><span class="p">],</span> <span class="nv">subject</span><span class="p">:</span> <span class="s">"Bug Report"</span><span class="p">)</span>
+
+      <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+  <span class="p">}</span>
+</code></pre>
+
+<p><strong>NOTE:</strong> There is a known issue with using a mail compose view controller in a simulator
+which causes some simulators to crash. You will need to run the example on a
+device to test out the full report compose view functionality.</p>
+<a href='#disabling' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='disabling'>Disabling</h3>
+
+<p>If you need to disable BugShaker&rsquo;s shake detection for any reason:</p>
+<pre class="highlight swift"><code><span class="kt">BugShaker</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p>BugShaker is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"BugShaker"</span>
+</code></pre>
+<a href='#author' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='author'>Author</h2>
+
+<p>Dan Trenz (<a href="http://www.twitter.com/dtrenz">@dtrenz</a>) c/o <a href="http://www.detroitlabs.com">Detroit Labs</a></p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>BugShaker is available under the MIT license. See the LICENSE file for more info.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/detroit-labs/BugShaker" target="_blank" rel="external">Dan Trenz</a>. All rights reserved. (Last updated: 2016-03-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

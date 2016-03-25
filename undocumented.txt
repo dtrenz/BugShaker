@@ -1,0 +1,7 @@
+BugShaker.swift
+	public class BugShaker
+	override public func canBecomeFirstResponder() -> Bool
+	override public func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?)
+	public func mailComposeController(controller: MFMailComposeViewController,
+                                    result: MFMailComposeResult,
+                                    error: NSError?)
