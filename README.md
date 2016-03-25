@@ -1,4 +1,4 @@
-<img src="banner.png" width="50%" alt="BugShaker">
+<img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/banner.png" width="50%" alt="BugShaker">
 
 Shake to send a bug report!
 
