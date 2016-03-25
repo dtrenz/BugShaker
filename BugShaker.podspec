@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BugShaker"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "Shake to submit a bug report (w/ screenshot) via email."
   s.description      = <<-DESC
                        BugShaker allows your users to simply submit bug reports by shaking the device.
