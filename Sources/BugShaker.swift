@@ -116,24 +116,21 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
   }
 
     /*
- 
         Device statistics to be included in report body
-     
         ex:
             My Device: iPhone6s
             App Version: 1.0.1
             iOS Version: 9.3
             Time Stamp: 2016-06-24T12:00:00 UTC
     */
-    
     func capturedDeviceStatistics() -> String {
-        let device = UIDevice.currentDevice()
-        
-        let formatter = NSDateFormatter()
+        let device           = UIDevice.currentDevice()
+
+        let formatter        = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss 'UTC'"
-        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let timestamp = formatter.stringFromDate(NSDate())
+        formatter.timeZone   = NSTimeZone(forSecondsFromGMT: 0)
+        formatter.locale     = NSLocale(localeIdentifier: "en_US_POSIX")
+        let timestamp        = formatter.stringFromDate(NSDate())
 
         return "My Device: \(Device.version())\r\n"
             + "App Version: \(NSBundle.mainBundle().appVersion)\r\n"
@@ -158,7 +155,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
       }
 
       let deviceStatistics = capturedDeviceStatistics()
-        
+
       mailComposer.setToRecipients(toRecipients)
       mailComposer.setSubject(BugShaker.Config.subject ?? "Bug Report")
       mailComposer.setMessageBody(deviceStatistics + (BugShaker.Config.body ?? ""), isHTML: false)
