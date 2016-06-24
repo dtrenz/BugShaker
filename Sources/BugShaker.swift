@@ -118,10 +118,12 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     /*
  
         Device statistics to be included in report body
-            My Device: device idiom
-            App Version: app version
-            iOS Version: os version
-            Time Stamp: timestamp
+     
+        ex:
+            My Device: iPhone6s
+            App Version: 1.0.1
+            iOS Version: 9.3
+            Time Stamp: 2016-06-24T12:00:00 UTC
     */
     
     func capturedDeviceStatistics() -> String {
