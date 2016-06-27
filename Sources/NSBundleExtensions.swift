@@ -9,17 +9,17 @@
 import Foundation
 
 extension NSBundle {
-    
+
     var releaseVersion: String? {
         return self.infoDictionary?["CFBundleShortVersionString"] as? String
     }
-    
+
     var buildVersion: String? {
         return self.infoDictionary?["CFBundleVersion"] as? String
     }
-    
+
     var appVersion: String {
         return "\(self.releaseVersion!).\(self.buildVersion!)"
     }
-    
+
 }
