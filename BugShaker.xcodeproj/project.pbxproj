@@ -12,7 +12,7 @@
 		C528213E1CA43F7B003EA0D4 /* ReportPromptSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821371CA43F60003EA0D4 /* ReportPromptSpec.swift */; };
 		C528213F1CA43F7B003EA0D4 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821381CA43F60003EA0D4 /* ViewControllerSpec.swift */; };
 		C584AE541CA48B1B00CC65F2 /* BugShakerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C584AE531CA48B1B00CC65F2 /* BugShakerSpec.swift */; };
-		E2CA8F4B1D1DB2D1001F948A /* NSBundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA8F4A1D1DB2D1001F948A /* NSBundleExtensions.swift */; };
+		E2CA8F4D1D21A571001F948A /* NSBundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CA8F4C1D21A571001F948A /* NSBundleExtensions.swift */; };
 		E75140A53A95ED141B4078EA /* Pods_BugShakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B45F1CDCC034FA4902615D /* Pods_BugShakerTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 		C52821381CA43F60003EA0D4 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		C584AE531CA48B1B00CC65F2 /* BugShakerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugShakerSpec.swift; sourceTree = "<group>"; };
 		E16F4CB9EF5409E5E86AF02F /* Pods-BugShakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugShakerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BugShakerTests/Pods-BugShakerTests.release.xcconfig"; sourceTree = "<group>"; };
-		E2CA8F4A1D1DB2D1001F948A /* NSBundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtensions.swift; sourceTree = "<group>"; };
+		E2CA8F4C1D21A571001F948A /* NSBundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBundleExtensions.swift; path = Sources/NSBundleExtensions.swift; sourceTree = "<group>"; };
 		FE9F6CA326F308370BB72F76 /* Pods-BugShakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugShakerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BugShakerTests/Pods-BugShakerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 			children = (
 				C52821191CA43E34003EA0D4 /* Supporting Files */,
 				C52821151CA43E2B003EA0D4 /* BugShaker.swift */,
-				E2CA8F4A1D1DB2D1001F948A /* NSBundleExtensions.swift */,
+				E2CA8F4C1D21A571001F948A /* NSBundleExtensions.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2CA8F4B1D1DB2D1001F948A /* NSBundleExtensions.swift in Sources */,
+				E2CA8F4D1D21A571001F948A /* NSBundleExtensions.swift in Sources */,
 				C52821161CA43E2B003EA0D4 /* BugShaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
