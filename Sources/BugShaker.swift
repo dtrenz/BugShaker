@@ -7,7 +7,7 @@
 
 import UIKit
 import MessageUI
-
+import Device
 
 public class BugShaker {
   
@@ -115,6 +115,30 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     return screenshot;
   }
 
+    /*
+        Device statistics to be included in report body
+        ex:
+            My Device: iPhone6s
+            App Version: 1.0.1
+            iOS Version: 9.3
+            Time Stamp: 2016-06-24T12:00:00 UTC
+    */
+    func capturedDeviceStatistics() -> String {
+        let device           = UIDevice.currentDevice()
+
+        let formatter        = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss 'UTC'"
+        formatter.timeZone   = NSTimeZone(forSecondsFromGMT: 0)
+        formatter.locale     = NSLocale(localeIdentifier: "en_US_POSIX")
+        let timestamp        = formatter.stringFromDate(NSDate())
+
+        return "My Device: \(Device.version())\r\n"
+            + "App Version: \(NSBundle.mainBundle().appVersion)\r\n"
+            + "iOS Version: \(device.systemVersion)\r\n"
+            + "Time Stamp: \(timestamp)\r\n"
+            + "-------------------\r\n"
+    }
+
   /**
    Present the user with a mail compose view with the recipient(s), subject line and body
    pre-populated, and the screenshot attached.
@@ -130,9 +154,11 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
         return
       }
 
+      let deviceStatistics = capturedDeviceStatistics()
+
       mailComposer.setToRecipients(toRecipients)
       mailComposer.setSubject(BugShaker.Config.subject ?? "Bug Report")
-      mailComposer.setMessageBody(BugShaker.Config.body ?? "", isHTML: false)
+      mailComposer.setMessageBody(deviceStatistics + (BugShaker.Config.body ?? ""), isHTML: false)
       mailComposer.mailComposeDelegate = self
 
       if let screenshot = screenshot, let screenshotJPEG = UIImageJPEGRepresentation(screenshot, CGFloat(1.0)) {
