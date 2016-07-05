@@ -25,7 +25,7 @@ extension NSBundle {
         guard let buildVersion = self.buildVersion else {
             return
         }
-        
+
         return "\(releaseVersion).\(buildVersion)"
     }
 
