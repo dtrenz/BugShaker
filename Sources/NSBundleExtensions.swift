@@ -20,12 +20,11 @@ extension NSBundle {
 
     var appVersion: String? {
         guard let releaseVersion = self.releaseVersion else {
-            return
+            return nil
         }
         guard let buildVersion = self.buildVersion else {
-            return
+            return nil
         }
-
         return "\(releaseVersion).\(buildVersion)"
     }
 
