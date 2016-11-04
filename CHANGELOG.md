@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 `BugShaker` adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.0](https://github.com/dtrenz/BugShaker/releases/tag/0.3.0)
+**Released:** 2016-11-04
+
+#### Added
+ - Support for **Swift v2.3**
+
+---
+
 ## [0.2.1](https://github.com/dtrenz/BugShaker/releases/tag/0.2.1)
 **Released:** 2016-03-25
 
@@ -13,7 +21,8 @@ All notable changes to this project will be documented in this file.
 
 #### Fixed
  - Broken README images
- - 
+
+---
 
 ## [0.2.0](https://github.com/dtrenz/BugShaker/releases/tag/0.2.0)
 **Released:** 2016-03-24

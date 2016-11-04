@@ -7,17 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C53DFA0C1DCB97A000634CE4 /* BugShaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DFA0B1DCB97A000634CE4 /* BugShaker.framework */; };
+		C53DFA0D1DCB97A000634CE4 /* BugShaker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C53DFA0B1DCB97A000634CE4 /* BugShaker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C573BD7E1CA443810021F8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821521CA4403A003EA0D4 /* AppDelegate.swift */; };
 		C573BD7F1CA443A90021F8ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52821531CA4403A003EA0D4 /* LaunchScreen.xib */; };
 		C573BD801CA443AE0021F8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52821551CA4403A003EA0D4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C53DFA0E1DCB97A000634CE4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C53DFA0D1DCB97A000634CE4 /* BugShaker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C52821521CA4403A003EA0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C52821541CA4403A003EA0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C52821561CA4403A003EA0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C52821571CA4403A003EA0D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C59755ED1CA450C700A21FAB /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Example.app; path = "/Users/dtrenz/Dev/src/BugShaker/Example/build/Debug-iphoneos/Example.app"; sourceTree = "<absolute>"; };
+		C53DFA0B1DCB97A000634CE4 /* BugShaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BugShaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C58A4FB41DCB96A000BC029B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53DFA0C1DCB97A000634CE4 /* BugShaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,7 +52,9 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				C53DFA0B1DCB97A000634CE4 /* BugShaker.framework */,
 				C52821511CA4403A003EA0D4 /* Sources */,
+				C58A4FB41DCB96A000BC029B /* Example.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +95,7 @@
 				C573BD681CA4436A0021F8ED /* Sources */,
 				C573BD691CA4436A0021F8ED /* Frameworks */,
 				C573BD6A1CA4436A0021F8ED /* Resources */,
+				C53DFA0E1DCB97A000634CE4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -82,7 +103,7 @@
 			);
 			name = Example;
 			productName = "BugShaker Example";
-			productReference = C59755ED1CA450C700A21FAB /* Example.app */;
+			productReference = C58A4FB41DCB96A000BC029B /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -92,11 +113,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					C573BD6B1CA4436A0021F8ED = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4J9G6749JK;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -174,8 +197,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -219,8 +244,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -240,6 +267,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -249,11 +277,13 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4J9G6749JK;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dtrenz.BugShaker-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -261,11 +291,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = 4J9G6749JK;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dtrenz.BugShaker-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

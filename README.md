@@ -4,8 +4,9 @@ Shake to send a bug report!
 
 [![CI Status](http://img.shields.io/travis/dtrenz/BugShaker.svg?style=flat)](https://travis-ci.org/dtrenz/BugShaker)
 [![Version](https://img.shields.io/cocoapods/v/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
-[![License](https://img.shields.io/cocoapods/l/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
-[![Platform](https://img.shields.io/cocoapods/p/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
+![License](https://img.shields.io/cocoapods/l/BugShaker.svg?style=flat)
+![Platform](https://img.shields.io/cocoapods/p/BugShaker.svg?style=flat)
+![Swift Version](https://img.shields.io/badge/swift-v2.3-blue.svg)
 [![codecov.io](https://codecov.io/github/dtrenz/BugShaker/coverage.svg?branch=master)](https://codecov.io/github/dtrenz/BugShaker?branch=master)
 [![Sponsored by Detroit Labs](https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat)](http://www.detroitlabs.com)
 
@@ -49,9 +50,9 @@ passing in the array of email recipients and an optional custom subject line:
   }
 ```
 
-**NOTE:** There is a known issue with using a mail compose view controller in a simulator
-which causes some simulators to crash. You will need to run the example on a
-device to test out the full report compose view functionality.
+**NOTE:** There is a known issue with using a mail compose view controller in a simulator. 
+The mail view will either not display at all, or possibly crash the simulator. You will need 
+to run the example on a device to test out the full report compose view functionality.
 
 ### Disabling
 
