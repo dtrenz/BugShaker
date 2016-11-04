@@ -1,5 +1,7 @@
 disabled_rules: # rule identifiers to exclude from running
+  - conditional_binding_cascade
   - trailing_whitespace
+  - vertical_whitespace
 included: # paths to include during linting. `--path` is ignored if present.
   - Sources
 # parameterized rules can be customized from this configuration file
