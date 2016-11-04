@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C51FD8451DCBADE700FC21FC /* BugShaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C52820F81CA43D40003EA0D4 /* BugShaker.framework */; };
 		C52821161CA43E2B003EA0D4 /* BugShaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821151CA43E2B003EA0D4 /* BugShaker.swift */; };
+		C5CDEFB21DCD0E32003AC73D /* BugShakerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C584AE531CA48B1B00CC65F2 /* BugShakerSpec.swift */; };
+		C5CDEFB31DCD0E32003AC73D /* ReportPromptSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821371CA43F60003EA0D4 /* ReportPromptSpec.swift */; };
+		C5CDEFB41DCD0E32003AC73D /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821381CA43F60003EA0D4 /* ViewControllerSpec.swift */; };
 		D29C3487E10C8FF0EE7B9A97 /* Pods_BugShakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73F2369F12ADB74131D1378 /* Pods_BugShakerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -264,7 +267,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		83670774C514410A9CF2968E /* [CP] Embed Pods Frameworks */ = {
@@ -289,6 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CDEFB41DCD0E32003AC73D /* ViewControllerSpec.swift in Sources */,
+				C5CDEFB31DCD0E32003AC73D /* ReportPromptSpec.swift in Sources */,
+				C5CDEFB21DCD0E32003AC73D /* BugShakerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.detroitlabs.BugShakerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -340,7 +346,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.detroitlabs.BugShakerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
