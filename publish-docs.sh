@@ -9,6 +9,7 @@ mkdir docs;
 # generate docs
 jazzy \
   --clean \
+  --swift-version 2.2 \
   --author "Dan Trenz" \
   --github_url https://github.com/dtrenz/BugShaker \
   --module-version 0.2.1 \

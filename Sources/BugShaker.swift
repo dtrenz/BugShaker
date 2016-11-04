@@ -102,7 +102,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
             UIGraphicsEndImageContext()
         }
         
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, UIScreen.mainScreen().scale);
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, UIScreen.mainScreen().scale)
         
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         
@@ -150,18 +150,18 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
         switch result {
         case .Failed:
             print("BugShaker – Bug report send failed.")
-            break;
+            break
             
         case .Sent:
             print("BugShaker – Bug report sent!")
-            break;
-            
+            break
+
         default:
             // noop
-            break;
+            break
         }
 
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
 }

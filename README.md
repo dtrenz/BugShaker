@@ -18,8 +18,8 @@ prompted to submit a bug report via a mail composer with the screenshot attached
 
 ## Screenshots
 
-![Report Prompt](https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png)
-![Report Compose View](https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png)
+<a href="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png"><img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-1.png" width="50%" alt="Report Prompt"></a>
+<a href="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png"><img src="https://raw.githubusercontent.com/dtrenz/BugShaker/master/Screenshots/screenshot-2.png" width="50%" alt="Report Compose View"></a>
 
 ## Usage
 
@@ -50,9 +50,9 @@ passing in the array of email recipients and an optional custom subject line:
   }
 ```
 
-**NOTE:** There is a known issue with using a mail compose view controller in a simulator
-which causes some simulators to crash. You will need to run the example on a
-device to test out the full report compose view functionality.
+**NOTE:** There is a known issue with using a mail compose view controller in a simulator. 
+The mail view will either not display at all, or possibly crash the simulator. You will need 
+to run the example on a device to test out the full report compose view functionality.
 
 ### Disabling
 
