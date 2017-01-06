@@ -2,13 +2,13 @@
 //  AppDelegate.swift
 //  BugShaker
 //
-//  Created by git on 12/18/2015.
-//  Copyright (c) 2015 git. All rights reserved.
+//  Created by Dan Trenz on 12/18/2015.
+//  Copyright (c) 2015 Dan Trenz. All rights reserved.
 //
 
 import UIKit
-
 import BugShaker
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

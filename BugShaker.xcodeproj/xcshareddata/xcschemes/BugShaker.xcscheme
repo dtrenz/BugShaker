@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C528211D1CA43E70003EA0D4"
+               BlueprintIdentifier = "C51FD83F1DCBADE700FC21FC"
                BuildableName = "BugShakerTests.xctest"
                BlueprintName = "BugShakerTests"
                ReferencedContainer = "container:BugShaker.xcodeproj">
