@@ -19,7 +19,7 @@ class ViewControllerSpec: QuickSpec {
           return nil
         }
         
-        override func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
+        override func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
           presentReportPromptWasCalled = true
         }
       }
@@ -31,7 +31,7 @@ class ViewControllerSpec: QuickSpec {
       }
       
       it("can become first responder") {
-        expect(viewController.canBecomeFirstResponder()) == true
+        expect(viewController.canBecomeFirstResponder) == true
       }
       
       context("when I shake the device") {
@@ -43,7 +43,7 @@ class ViewControllerSpec: QuickSpec {
           }
           
           it("takes a screenshot") {
-            viewController.motionEnded(.MotionShake, withEvent: nil)
+            viewController.motionEnded(.motionShake, with: nil)
             
             expect(viewController.captureScreenshotWasCalled) == true
           }
@@ -52,14 +52,14 @@ class ViewControllerSpec: QuickSpec {
             class MockViewController: UIViewController {
               var presentReportPromptWasCalled = false
                 
-              override func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
+              override func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
                 presentReportPromptWasCalled = true
               }
             }
             
             let viewController = MockViewController()
             
-            viewController.motionEnded(.MotionShake, withEvent: nil)
+            viewController.motionEnded(.motionShake, with: nil)
             
             expect(viewController.presentReportPromptWasCalled) == true
           }
@@ -73,7 +73,7 @@ class ViewControllerSpec: QuickSpec {
           }
           
           it("does not take a screenshot") {
-            viewController.motionEnded(.MotionShake, withEvent: nil)
+            viewController.motionEnded(.motionShake, with: nil)
             
             expect(viewController.captureScreenshotWasCalled) == false
           }
@@ -82,14 +82,14 @@ class ViewControllerSpec: QuickSpec {
             class MockViewController: UIViewController {
               var presentReportPromptWasCalled = false
               
-              override func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
+              override func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
                 presentReportPromptWasCalled = true
               }
             }
             
             let viewController = MockViewController()
             
-            viewController.motionEnded(.MotionShake, withEvent: nil)
+            viewController.motionEnded(.motionShake, with: nil)
             
             expect(viewController.presentReportPromptWasCalled) == false
           }
