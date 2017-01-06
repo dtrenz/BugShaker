@@ -39,7 +39,7 @@ class ViewControllerSpec: QuickSpec {
         context("when BugShaker is enabled") {
           
           beforeEach {
-            BugShaker.enabled = true
+            BugShaker.isEnabled = true
           }
           
           it("takes a screenshot") {
@@ -69,7 +69,7 @@ class ViewControllerSpec: QuickSpec {
         context("when BugShaker is disabled") {
           
           beforeEach {
-            BugShaker.enabled = false
+            BugShaker.isEnabled = false
           }
           
           it("does not take a screenshot") {

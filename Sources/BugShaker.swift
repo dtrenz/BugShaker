@@ -12,7 +12,7 @@ import MessageUI
 final public class BugShaker {
     
     /// Enable or disable shake detection
-    public static var enabled = true
+    public static var isEnabled = true
     
     fileprivate struct Config {
         static var recipients: [String]?
@@ -30,23 +30,10 @@ final public class BugShaker {
      - subject:      Custom subject line to use for the report email.
      - body:         Custom email body (plain text).
      */
-    public class func configure(to recipients: [String]!, subject: String?, body: String?) {
+    public class func configure(to recipients: [String], subject: String?, body: String? = nil) {
         Config.recipients = recipients
         Config.subject = subject
         Config.body = body
-    }
-    
-    /**
-     Set bug report email recipient(s) & custom subject line.
-     Convenience method for `configure(to:, subject:, body:)` for use when not
-     specifying custom body text.
-     
-     - Parameters:
-     - recipients: List of email addresses to which the report will be sent.
-     - subject:      Custom subject line to use for the report email.
-     */
-    public class func configure(to recipients: [String]!, subject: String?) {
-        configure(to: recipients, subject: subject, body: nil)
     }
     
 }
@@ -60,7 +47,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     }
     
     override open func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        guard BugShaker.enabled && motion == .motionShake else { return }
+        guard BugShaker.isEnabled && motion == .motionShake else { return }
         
         let cachedScreenshot = captureScreenshot()
         
@@ -71,7 +58,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     
     // MARK: - Alert
     
-    private func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
+    func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
         let actionSheet = UIAlertController(
             title: "Shake detected!",
             message: "Would you like to report a bug?",
@@ -95,7 +82,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
      
      - returns: Screenshot image.
      */
-    private func captureScreenshot() -> UIImage? {
+    func captureScreenshot() -> UIImage? {
         guard let layer = UIApplication.shared.keyWindow?.layer else { return nil }
         
         defer {
@@ -117,7 +104,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
      
      - parameter screenshot: The screenshot to attach to the report.
      */
-    private func presentReportComposeView(_ screenshot: UIImage?) {
+    func presentReportComposeView(_ screenshot: UIImage?) {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             
