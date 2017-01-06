@@ -2,11 +2,22 @@
 All notable changes to this project will be documented in this file.
 `BugShaker` adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.0](https://github.com/dtrenz/BugShaker/releases/tag/1.0.0)
+**Released:** 2017-01-06
+
+#### Added
+ - Support for **Swift v3**
+
+---
+
 ## [0.3.0](https://github.com/dtrenz/BugShaker/releases/tag/0.3.0)
 **Released:** 2017-01-06
 
 #### Added
  - Support for **Swift v2.3**
+
+#### Fixed
+ - Bug: ["Mail Compose Viewer won't dismiss.](https://github.com/dtrenz/BugShaker/issues/30)
 
 ---
 

@@ -16,7 +16,7 @@ class ReportPromptSpec: QuickSpec {
         var reportActionTitle: String? = nil
         var cancelActionTitle: String? = nil
         
-        override func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+        override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
           if let alertController = viewControllerToPresent as? UIAlertController {
             alertTitle = alertController.title
             alertMessage = alertController.message

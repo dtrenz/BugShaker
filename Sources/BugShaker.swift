@@ -12,7 +12,7 @@ import MessageUI
 final public class BugShaker {
     
     /// Enable or disable shake detection
-    public static var enabled = true
+    public static var isEnabled = true
     
     struct Config {
         static var recipients: [String]?
@@ -30,23 +30,10 @@ final public class BugShaker {
      - subject:      Custom subject line to use for the report email.
      - body:         Custom email body (plain text).
      */
-    public class func configure(to recipients: [String]!, subject: String?, body: String?) {
+    public class func configure(to recipients: [String], subject: String?, body: String? = nil) {
         Config.recipients = recipients
         Config.subject = subject
         Config.body = body
-    }
-    
-    /**
-     Set bug report email recipient(s) & custom subject line.
-     Convenience method for `configure(to:, subject:, body:)` for use when not
-     specifying custom body text.
-     
-     - Parameters:
-     - recipients: List of email addresses to which the report will be sent.
-     - subject:      Custom subject line to use for the report email.
-     */
-    public class func configure(to recipients: [String]!, subject: String?) {
-        configure(to: recipients, subject: subject, body: nil)
     }
     
 }
@@ -55,12 +42,12 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     
     // MARK: - UIResponder
     
-    override public func canBecomeFirstResponder() -> Bool {
+    override open var canBecomeFirstResponder: Bool {
         return true
     }
     
-    override public func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        guard BugShaker.enabled && motion == .MotionShake else { return }
+    override open func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        guard BugShaker.isEnabled && motion == .motionShake else { return }
         
         let cachedScreenshot = captureScreenshot()
         
@@ -71,20 +58,20 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     
     // MARK: - Alert
     
-    func presentReportPrompt(reportActionHandler: (UIAlertAction) -> Void) {
+    func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
         let actionSheet = UIAlertController(
             title: "Shake detected!",
             message: "Would you like to report a bug?",
-            preferredStyle: .ActionSheet
+            preferredStyle: .actionSheet
         )
         
-        let reportAction = UIAlertAction(title: "Report A Bug", style: .Default, handler: reportActionHandler)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { _ in }
+        let reportAction = UIAlertAction(title: "Report A Bug", style: .default, handler: reportActionHandler)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         actionSheet.addAction(reportAction)
         actionSheet.addAction(cancelAction)
         
-        presentViewController(actionSheet, animated: true, completion: nil)
+        present(actionSheet, animated: true, completion: nil)
     }
     
     
@@ -96,17 +83,17 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
      - returns: Screenshot image.
      */
     func captureScreenshot() -> UIImage? {
-        guard let layer = UIApplication.sharedApplication().keyWindow?.layer else { return nil }
+        guard let layer = UIApplication.shared.keyWindow?.layer else { return nil }
         
         defer {
             UIGraphicsEndImageContext()
         }
         
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, UIScreen.main.scale)
         
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         
-        layer.renderInContext(context)
+        layer.render(in: context)
         
         return UIGraphicsGetImageFromCurrentImageContext()
     }
@@ -117,7 +104,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
      
      - parameter screenshot: The screenshot to attach to the report.
      */
-    func presentReportComposeView(screenshot: UIImage?) {
+    func presentReportComposeView(_ screenshot: UIImage?) {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             
@@ -135,24 +122,24 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
                 mailComposer.addAttachmentData(screenshotJPEG, mimeType: "image/jpeg", fileName: "screenshot.jpeg")
             }
             
-            presentViewController(mailComposer, animated: true, completion: nil)
+            present(mailComposer, animated: true, completion: nil)
         }
     }
     
     // MARK: - MFMailComposeViewControllerDelegate
     
-    public func mailComposeController(controller: MFMailComposeViewController,
-            didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    public func mailComposeController(_ controller: MFMailComposeViewController,
+            didFinishWith result: MFMailComposeResult, error: Error?) {
         if let error = error {
             print("BugShaker – Error: \(error)")
         }
         
         switch result {
-        case .Failed:
+        case .failed:
             print("BugShaker – Bug report send failed.")
             break
             
-        case .Sent:
+        case .sent:
             print("BugShaker – Bug report sent!")
             break
 
@@ -161,7 +148,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
             break
         }
 
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
 }
