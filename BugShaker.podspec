@@ -22,4 +22,7 @@ Pod::Spec.new do |spec|
                          ]
   spec.social_media_url  = 'https://twitter.com/dtrenz'
   spec.source_files      = 'Sources/**/*'
+
+
+  spec.dependency 'Device', '~> 2.0'
 end

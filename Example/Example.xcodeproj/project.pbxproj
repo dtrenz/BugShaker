@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C53DFA0C1DCB97A000634CE4 /* BugShaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DFA0B1DCB97A000634CE4 /* BugShaker.framework */; };
+		C53DFA0C1DCB97A000634CE4 /* BugShaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DFA0B1DCB97A000634CE4 /* BugShaker.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C53DFA0D1DCB97A000634CE4 /* BugShaker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C53DFA0B1DCB97A000634CE4 /* BugShaker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C573BD7E1CA443810021F8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52821521CA4403A003EA0D4 /* AppDelegate.swift */; };
 		C573BD7F1CA443A90021F8ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52821531CA4403A003EA0D4 /* LaunchScreen.xib */; };
@@ -206,6 +206,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -254,6 +255,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
