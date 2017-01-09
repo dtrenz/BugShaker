@@ -15,6 +15,7 @@ notifications:
 before_install:
   - rvm use $RVM_RUBY_VERSION
   - gem install cocoapods
+  - pod repo update
   - pod install
 after_success:
   - bash <(curl -s https://codecov.io/bash)
