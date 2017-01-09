@@ -17,6 +17,9 @@ final public class BugShaker {
 =======
     /// Enable or disable shake detection
     public static var isEnabled = true
+<<<<<<< HEAD
+>>>>>>> swift-3.0
+=======
 >>>>>>> swift-3.0
     
     struct Config {
@@ -55,6 +58,9 @@ final public class BugShaker {
      - subject:      Custom subject line to use for the report email.
      - body:         Custom email body (plain text).
      */
+<<<<<<< HEAD
+>>>>>>> swift-3.0
+=======
 >>>>>>> swift-3.0
     public class func configure(to recipients: [String], subject: String?, body: String? = nil) {
         Config.recipients = recipients
@@ -62,6 +68,7 @@ final public class BugShaker {
         Config.body = body
     }
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     // MARK: Helper Methods
     
@@ -106,6 +113,8 @@ final public class BugShaker {
         return headerArray.joined(separator: "\r\n")
     }
     
+=======
+>>>>>>> swift-3.0
 =======
 >>>>>>> swift-3.0
 }
@@ -182,6 +191,9 @@ extension UIViewController {
      
      - parameter screenshot: The screenshot to attach to the report.
      */
+<<<<<<< HEAD
+>>>>>>> swift-3.0
+=======
 >>>>>>> swift-3.0
     func presentReportComposeView(_ screenshot: UIImage?) {
         if MFMailComposeViewController.canSendMail() {

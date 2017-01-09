@@ -5,7 +5,7 @@ platform :ios, '9.3'
 
 target 'BugShaker' do
   pod 'Device', '~> 2.0'
-end
+end 
 
 target 'BugShakerTests' do
   pod 'Quick', '~> 1.0'
