@@ -12,7 +12,12 @@ import Device
 
 final public class BugShaker {
     
+<<<<<<< HEAD
     // MARK: - Types
+=======
+    /// Enable or disable shake detection
+    public static var isEnabled = true
+>>>>>>> swift-3.0
     
     struct Config {
         static var recipients: [String]?
@@ -20,6 +25,7 @@ final public class BugShaker {
         static var body: String?
     }
     
+<<<<<<< HEAD
     private typealias DiagnosticInfo = (modelName: String, appVersion: String, osVersion: String)
     
     // MARK: - Properties
@@ -38,12 +44,25 @@ final public class BugShaker {
     ///   - recipients: List of email addresses to which the report will be sent.
     ///   - subject: Custom subject line to use for the report email.
     ///   - body: Custom email body (plain text).
+=======
+    // MARK: - Configuration
+    
+    /**
+     Set bug report email recipient(s), custom subject line and body.
+     
+     - Parameters:
+     - recipients: List of email addresses to which the report will be sent.
+     - subject:      Custom subject line to use for the report email.
+     - body:         Custom email body (plain text).
+     */
+>>>>>>> swift-3.0
     public class func configure(to recipients: [String], subject: String?, body: String? = nil) {
         Config.recipients = recipients
         Config.subject = subject
         Config.body = body
     }
     
+<<<<<<< HEAD
     // MARK: Helper Methods
     
     /// Create a timestamp string for NOW, in UTC.
@@ -87,6 +106,8 @@ final public class BugShaker {
         return headerArray.joined(separator: "\r\n")
     }
     
+=======
+>>>>>>> swift-3.0
 }
 
 
@@ -149,10 +170,19 @@ extension UIViewController {
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
+<<<<<<< HEAD
     /// Present the user with a mail compose view with the recipient(s), subject line and body
     /// pre-populated, and the screenshot attached.
     ///
     /// - Parameter screenshot: The screenshot to attach to the report.
+=======
+    /**
+     Present the user with a mail compose view with the recipient(s), subject line and body
+     pre-populated, and the screenshot attached.
+     
+     - parameter screenshot: The screenshot to attach to the report.
+     */
+>>>>>>> swift-3.0
     func presentReportComposeView(_ screenshot: UIImage?) {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
