@@ -21,5 +21,5 @@ before_install:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 script:
-  - set -o pipefail && xcodebuild clean test -workspace BugShaker.xcworkspace -scheme BugShaker -destination 'platform=iOS Simulator,name=iPhone 6s' ONLY_ACTIVE_ARCH=YES | xcpretty
+  - set -o pipefail && xcodebuild clean test -workspace BugShaker.xcworkspace -scheme BugShaker -destination 'platform=iOS Simulator,id=22FA2149-1241-469C-BF6D-462D3837DB72' ONLY_ACTIVE_ARCH=YES | xcpretty
   - bundle exec pod lib lint
