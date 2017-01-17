@@ -16,6 +16,7 @@ before_install:
   - rvm use $RVM_RUBY_VERSION
   - gem install bundler
   - bundle
+  - bundle exec pod setup
   - bundle exec pod install
 after_success:
   - bash <(curl -s https://codecov.io/bash)
