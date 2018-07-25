@@ -22,5 +22,4 @@ Pod::Spec.new do |spec|
                           'https://raw.githubusercontent.com/dtrenz/BugShaker/develop/Screenshots/screenshot-2.png',
                          ]
   spec.social_media_url  = 'https://twitter.com/dtrenz'
-  spec.source_files      = 'Sources/**/*'
 end
