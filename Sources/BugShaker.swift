@@ -58,7 +58,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     
     // MARK: - Alert
     
-    func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
+    @objc func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
         let actionSheet = UIAlertController(
             title: "Shake detected!",
             message: "Would you like to report a bug?",
@@ -82,7 +82,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
      
      - returns: Screenshot image.
      */
-    func captureScreenshot() -> UIImage? {
+    @objc func captureScreenshot() -> UIImage? {
         guard let layer = UIApplication.shared.keyWindow?.layer else { return nil }
         
         defer {

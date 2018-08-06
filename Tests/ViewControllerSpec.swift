@@ -14,12 +14,12 @@ class ViewControllerSpec: QuickSpec {
         var captureScreenshotWasCalled = false
         var presentReportPromptWasCalled = false
         
-        override func captureScreenshot() -> UIImage? {
+        @objc override func captureScreenshot() -> UIImage? {
           captureScreenshotWasCalled = true
           return nil
         }
         
-        override func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
+        @objc override func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
           presentReportPromptWasCalled = true
         }
       }
