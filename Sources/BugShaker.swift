@@ -83,18 +83,16 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
      - returns: Screenshot image.
      */
     @objc func captureScreenshot() -> UIImage? {
-        guard let layer = UIApplication.shared.keyWindow?.layer else { return nil }
-        
-        defer {
-            UIGraphicsEndImageContext()
-        }
-        
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, UIScreen.main.scale)
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        
-        layer.render(in: context)
-        
+        guard let window = UIApplication.shared.keyWindow else { return nil }
+
+        UIGraphicsBeginImageContextWithOptions(window.frame.size,
+                                               true,
+                                               window.screen.scale)
+
+        defer { UIGraphicsEndImageContext() }
+
+        window.drawHierarchy(in: window.bounds, afterScreenUpdates: false)
+
         return UIGraphicsGetImageFromCurrentImageContext()
     }
     
