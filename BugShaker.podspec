@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name              = 'BugShaker'
-  spec.version           = '0.4.0'
+  spec.version           = '0.4.1'
   spec.license           = { :type => 'Apache 2.0' }
   spec.homepage          = 'https://github.com/detroit-labs/BugShaker'
   spec.documentation_url = 'http://dtrenz.github.io/BugShaker/'
