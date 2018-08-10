@@ -59,19 +59,27 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     // MARK: - Alert
     
     @objc func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
-        let actionSheet = UIAlertController(
+        let preferredStyle: UIAlertControllerStyle
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            preferredStyle = .alert
+        } else {
+            preferredStyle = .actionSheet
+        }
+
+        let alertController = UIAlertController(
             title: "Shake detected!",
             message: "Would you like to report a bug?",
-            preferredStyle: .actionSheet
+            preferredStyle: preferredStyle
         )
         
         let reportAction = UIAlertAction(title: "Report A Bug", style: .default, handler: reportActionHandler)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
-        actionSheet.addAction(reportAction)
-        actionSheet.addAction(cancelAction)
+        alertController.addAction(reportAction)
+        alertController.addAction(cancelAction)
         
-        present(actionSheet, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
     
