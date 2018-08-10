@@ -2,11 +2,11 @@ Pod::Spec.new do |spec|
   spec.name              = 'BugShaker'
   spec.version           = '0.4.1'
   spec.license           = { :type => 'Apache 2.0' }
-  spec.homepage          = 'https://github.com/detroit-labs/BugShaker'
+  spec.homepage          = 'https://github.com/dtrenz/BugShaker'
   spec.documentation_url = 'http://dtrenz.github.io/BugShaker/'
   spec.authors           = { 'Dan Trenz' => 'dtrenz@gmail.com' }
   spec.summary           = 'Shake to submit a bug report (w/ screenshot) via email.'
-  spec.source            = { :git => 'https://github.com/detroit-labs/BugShaker.git', :tag => spec.version.to_s }
+  spec.source            = { :git => 'https://github.com/dtrenz/BugShaker.git', :tag => spec.version.to_s }
   spec.source_files      = 'Sources/*.swift'
   spec.swift_version     = '4.1'
   spec.platform          = :ios, '9.0'
