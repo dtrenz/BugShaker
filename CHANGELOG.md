@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 `BugShaker` adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.1](https://github.com/dtrenz/BugShaker/releases/tag/0.4.1)
+**Released:** 2018-08-10
+
+#### Fixed
+  - Bug: [Screenshots aren't able to capture blurred images](https://github.com/dtrenz/BugShaker/issues/28)
+  - Bug: [App crashes with appshaker included](https://github.com/dtrenz/BugShaker/issues/29)
+
+---
+
 ## [0.4.0](https://github.com/dtrenz/BugShaker/releases/tag/0.4.0)
 **Released:** 2018-08-06
 
