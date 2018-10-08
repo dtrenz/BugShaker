@@ -46,7 +46,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
         return true
     }
     
-    override open func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         guard BugShaker.isEnabled && motion == .motionShake else { return }
         
         let cachedScreenshot = captureScreenshot()
@@ -59,7 +59,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     // MARK: - Alert
     
     @objc func presentReportPrompt(_ reportActionHandler: @escaping (UIAlertAction) -> Void) {
-        let preferredStyle: UIAlertControllerStyle
+        let preferredStyle: UIAlertController.Style
 
         if UIDevice.current.userInterfaceIdiom == .pad {
             preferredStyle = .alert
@@ -124,7 +124,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
             mailComposer.setMessageBody(BugShaker.Config.body ?? "", isHTML: false)
             mailComposer.mailComposeDelegate = self
             
-            if let screenshot = screenshot, let screenshotJPEG = UIImageJPEGRepresentation(screenshot, CGFloat(1.0)) {
+            if let screenshot = screenshot, let screenshotJPEG = screenshot.jpegData(compressionQuality: CGFloat(1.0)) {
                 mailComposer.addAttachmentData(screenshotJPEG, mimeType: "image/jpeg", fileName: "screenshot.jpeg")
             }
             

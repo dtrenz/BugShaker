@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name              = 'BugShaker'
-  spec.version           = '0.4.1'
+  spec.version           = '0.5.0'
   spec.license           = { :type => 'Apache 2.0' }
   spec.homepage          = 'https://github.com/dtrenz/BugShaker'
   spec.documentation_url = 'http://dtrenz.github.io/BugShaker/'
@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.summary           = 'Shake to submit a bug report (w/ screenshot) via email.'
   spec.source            = { :git => 'https://github.com/dtrenz/BugShaker.git', :tag => spec.version.to_s }
   spec.source_files      = 'Sources/*.swift'
-  spec.swift_version     = '4.1'
+  spec.swift_version     = '4.2'
   spec.platform          = :ios, '9.0'
   spec.frameworks        = 'UIKit', 'MessageUI'
   spec.requires_arc      = true
