@@ -134,7 +134,7 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     
     // MARK: - MFMailComposeViewControllerDelegate
     
-    public func mailComposeController(_ controller: MFMailComposeViewController,
+    open func mailComposeController(_ controller: MFMailComposeViewController,
             didFinishWith result: MFMailComposeResult, error: Error?) {
         if let error = error {
             print("BugShaker – Error: \(error)")
