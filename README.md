@@ -6,7 +6,7 @@ Shake to send a bug report!
 [![Version](https://img.shields.io/cocoapods/v/BugShaker.svg?style=flat)](http://cocoapods.org/pods/BugShaker)
 ![License](https://img.shields.io/cocoapods/l/BugShaker.svg?style=flat)
 ![Platform](https://img.shields.io/cocoapods/p/BugShaker.svg?style=flat)
-![Swift Version](https://img.shields.io/badge/swift-v2.3-blue.svg)
+![Swift Version](https://img.shields.io/badge/swift-v5-blue.svg)
 [![codecov.io](https://codecov.io/github/dtrenz/BugShaker/coverage.svg?branch=master)](https://codecov.io/github/dtrenz/BugShaker?branch=master)
 [![Sponsored by Detroit Labs](https://img.shields.io/badge/sponsor-Detroit%20Labs-000000.svg?style=flat)](http://www.detroitlabs.com)
 

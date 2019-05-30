@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.summary           = 'Shake to submit a bug report (w/ screenshot) via email.'
   spec.source            = { :git => 'https://github.com/dtrenz/BugShaker.git', :tag => spec.version.to_s }
   spec.source_files      = 'Sources/*.swift'
-  spec.swift_version     = '4.2'
+  spec.swift_version     = '4.2', '5.0'
   spec.platform          = :ios, '9.0'
   spec.frameworks        = 'UIKit', 'MessageUI'
   spec.requires_arc      = true
