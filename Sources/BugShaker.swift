@@ -47,7 +47,10 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     }
     
     override open func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        guard BugShaker.isEnabled && motion == .motionShake else { return }
+        guard BugShaker.isEnabled && motion == .motionShake else {
+            next?.motionEnded(motion, with: event)
+            return
+        }
         
         let cachedScreenshot = captureScreenshot()
         
