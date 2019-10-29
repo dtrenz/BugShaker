@@ -18,6 +18,19 @@ final public class BugShaker {
         static var recipients: [String]?
         static var subject: String?
         static var body: String?
+        static var attachments: [MailAttachment] = []
+    }
+
+    public struct MailAttachment {
+        let data: Data
+        let mimeType: String
+        let fileName: String
+
+        public init(data: Data, mimeType: String, fileName: String) {
+            self.data = data
+            self.mimeType = mimeType
+            self.fileName = fileName
+        }
     }
     
     // MARK: - Configuration
@@ -30,10 +43,11 @@ final public class BugShaker {
      - subject:      Custom subject line to use for the report email.
      - body:         Custom email body (plain text).
      */
-    public class func configure(to recipients: [String], subject: String?, body: String? = nil) {
+    public class func configure(to recipients: [String], subject: String?, body: String? = nil, attachments: [MailAttachment] = []) {
         Config.recipients = recipients
         Config.subject = subject
         Config.body = body
+        Config.attachments = attachments
     }
     
 }
@@ -129,6 +143,10 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
             
             if let screenshot = screenshot, let screenshotJPEG = screenshot.jpegData(compressionQuality: CGFloat(1.0)) {
                 mailComposer.addAttachmentData(screenshotJPEG, mimeType: "image/jpeg", fileName: "screenshot.jpeg")
+            }
+
+            for attachment in BugShaker.Config.attachments {
+                mailComposer.addAttachmentData(attachment.data, mimeType: attachment.mimeType, fileName: attachment.fileName)
             }
             
             present(mailComposer, animated: true, completion: nil)
