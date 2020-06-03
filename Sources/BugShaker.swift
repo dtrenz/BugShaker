@@ -18,7 +18,7 @@ final public class BugShaker {
         static var recipients: [String]?
         static var subject: String?
         static var body: String?
-        static var attachments: [MailAttachment] = []
+        static var attachments: (() -> [MailAttachment])?
     }
 
     public struct MailAttachment {
@@ -43,7 +43,7 @@ final public class BugShaker {
      - subject:      Custom subject line to use for the report email.
      - body:         Custom email body (plain text).
      */
-    public class func configure(to recipients: [String], subject: String?, body: String? = nil, attachments: [MailAttachment] = []) {
+    public class func configure(to recipients: [String], subject: String?, body: String? = nil, attachments: (() -> [MailAttachment])? = nil) {
         Config.recipients = recipients
         Config.subject = subject
         Config.body = body
@@ -145,8 +145,8 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
                 mailComposer.addAttachmentData(screenshotJPEG, mimeType: "image/jpeg", fileName: "screenshot.jpeg")
             }
 
-            for attachment in BugShaker.Config.attachments {
-                mailComposer.addAttachmentData(attachment.data, mimeType: attachment.mimeType, fileName: attachment.fileName)
+            BugShaker.Config.attachments?().forEach {
+                mailComposer.addAttachmentData($0.data, mimeType: $0.mimeType, fileName: $0.fileName)
             }
             
             present(mailComposer, animated: true, completion: nil)
